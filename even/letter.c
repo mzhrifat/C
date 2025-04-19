@@ -11,7 +11,7 @@ int main(){
         }
         return 0;
 }
-        */
+        
 
 #include <stdio.h>
 int main(){
@@ -23,4 +23,16 @@ int main(){
         printf("%c is upper case\n",ch);
     }
     return 0;
+}
+*/
+#include <stdio.h>
+int main(){
+    int num =50;
+    if(num >=1 || num <=10){
+        printf ("yes\n");
+    }
+    else{
+        printf("no\n");
+    }
+        
 }
