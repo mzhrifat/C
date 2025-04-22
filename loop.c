@@ -1,4 +1,6 @@
 #include <stdio.h>
+/*
+
 int main(){
     printf("1\n");
     printf("2\n");
@@ -9,5 +11,11 @@ int main(){
     printf("7\n");
     printf("8\n");
     printf("9\n");
+    return 0;
+}
+    */
+int main(){
+    printf("1\n2\n3\n4\n5\n6\n7\n8\n9");
+
     return 0;
 }
