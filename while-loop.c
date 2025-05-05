@@ -53,7 +53,7 @@ int main(){
     }
     return 0;
 }
-    */
+   
 
 #include <stdio.h>
 int main(){
@@ -62,6 +62,17 @@ int main(){
     while(i<=10){
         printf("%d * %d=%d\n",n,i,n*1);
         i=i+1;
+    }
+    return 0;
+}
+     */
+
+#include <stdio.h>
+int main(){
+    int n=5;
+    int i;
+    for (i=1;i<=10;i=i+1){
+        printf("%d * %d %d\n",n,i,n*1);
     }
     return 0;
 }
