@@ -1,4 +1,4 @@
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -37,4 +37,35 @@ int main() {
 
     printf("%d\n", total);
     return 0;
+}
+*/
+
+#include <stdio.h>
+
+int main(){
+
+    int n,s;
+    scanf("%d %d",&n,&s);
+    int bus_capacity = 45;
+
+    //calculate total bus nedded
+    int total_buses =(n+bus_capacity-1)/bus_capacity;
+
+    //calculate the bus number of the s-th passenger
+    int your_bus =(s-1)/bus_capacity +1;
+
+    //calculate how many passengers are on the last bus
+    int last_bus_passengers =n%  bus_capacity;
+    if (last_bus_passengers == 0)
+       last_bus_passengers = bus_capacity;
+
+    //calculate tempty seats on the last bus
+    int empty_seats = bus_capacity-last_bus_passengers;
+
+    //output the results
+    printf("%d %d\n",total_buses,your_bus,empty_seats);
+
+    return 0;
+
+
 }
