@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <limits.h>
 
@@ -30,5 +31,28 @@ int main() {
     int result = maxTreasure(n, k, A);
     printf("Maximum treasure: %d\n", result);
 
+    return 0;
+}
+*/
+
+#include <stdio.h>
+#define MIN -1000000000
+
+int main(){
+    int n,k,sum = 0,maxSum=MIN,start=0;
+    scanf("%d%d",&n,&k);
+    int A[n];
+
+    for (int i=0;i<n;i++)
+
+    scanf("%d",&A[i]);
+
+    for (int end = 0;end <n;end++){
+        sum+=A[end];
+        if(end>=k)sum-=A[start++];
+        if(sum>maxSum)maxSum=sum;
+
+    }
+    printf("%d\n",maxSum);
     return 0;
 }
