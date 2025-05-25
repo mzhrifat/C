@@ -65,7 +65,7 @@ int main(){
     }
     return 0;
 }
-     */
+     
 
 #include <stdio.h>
 int main(){
@@ -77,3 +77,20 @@ int main(){
     return 0;
 }
 
+*/
+
+#include <stdio.h>
+int main(){
+    int n=5;
+    int i=1;
+
+    for (; ; ){
+        if (i>10){
+            break;
+
+        }
+        printf("%d * %d=%d\n",n,i,n*1);
+        i=i+1;
+    }
+    return 0;
+}
