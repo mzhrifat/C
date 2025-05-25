@@ -77,7 +77,7 @@ int main(){
     return 0;
 }
 
-*/
+
 
 #include <stdio.h>
 int main(){
@@ -93,4 +93,20 @@ int main(){
         i=i+1;
     }
     return 0;
+}
+*/
+
+#include <stdio.h>
+int main(){
+    int m,n=5;
+    int i;
+
+    m=0;
+    for (i=1;i<=10;i=i+1){
+        m=m+n;
+        printf("%d * %d=%d\n",n,i,m);
+
+    }
+    return 0;
+    
 }
