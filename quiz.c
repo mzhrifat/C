@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 
 int p[300005];
@@ -21,5 +22,41 @@ int main(){
         if(f(i) == i) c++;
 
     printf("%d\n", c - 1);
+    return 0;
+}
+ */
+ //an outstanding problem
+
+ #include <stdio.h>
+char s[10000000];
+long long l[100005], r[100005], len[100005];
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n, c, q;
+        scanf("%d%d%d", &n, &c, &q);
+        scanf("%s", s);
+
+        long long cur = n;
+        for (int i = 0; i < c; i++) {
+            int x, y;
+            scanf("%d%d", &x, &y);
+            l[i] = cur;
+            r[i] = cur + (y - x);
+            len[i] = x - 1;
+            for (int j = x - 1; j < y; j++) s[cur++] = s[j];
+        }
+
+        while (q--) {
+            long long k;
+            scanf("%lld", &k);
+            k--;
+            for (int i = c - 1; i >= 0; i--)
+                if (k >= l[i] && k <= r[i]) k = len[i] + (k - l[i]);
+            printf("%c\n", s[k]);
+        }
+    }
     return 0;
 }
