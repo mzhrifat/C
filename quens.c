@@ -1,3 +1,5 @@
+
+/*
 #include <stdio.h>
 #include <stdbool.h>
 int N,total;
@@ -31,4 +33,52 @@ void solve(int row){
         return 0;
     }
     }
+}
+*/
+
+/*QUEEN"S GAMBIT*/
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int N, total;
+bool cursed[12][12];
+bool col[12], diag1[24], diag2[24];
+
+void solve(int row) {
+    if (row == N) {
+        total++;
+        return;
+    }
+
+    for (int c = 0; c < N; c++) {
+        if (cursed[row][c] || col[c] || diag1[row + c] || diag2[row - c + N - 1])
+            continue;
+
+        col[c] = diag1[row + c] = diag2[row - c + N - 1] = true;
+        solve(row + 1);
+        col[c] = diag1[row + c] = diag2[row - c + N - 1] = false;
+    }
+}
+
+int main() {
+    int M;
+    scanf("%d %d", &N, &M);
+
+    // সব ঘরকে cursed=false set করা হচ্ছে
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            cursed[i][j] = false;
+
+    // cursed cell গুলো ইনপুট নিচ্ছি
+    for (int i = 0; i < M; i++) {
+        int r, c;
+        scanf("%d %d", &r, &c);
+        cursed[r][c] = true;
+    }
+
+    solve(0);  // রান করছি
+    printf("%d\n", total);  // রেজাল্ট প্রিন্ট
+
+    return 0;
 }
