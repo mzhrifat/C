@@ -23,7 +23,7 @@ int main(){
             if(b!=a){
                 for(c=1;c<=3;c++){
                     if (c!=a && c!=b){
-                        printf("%d %d %d\n", a, b, c);
+                        printf("%d %d %d\n", a, b, c); 
                     }
                 }
             }
